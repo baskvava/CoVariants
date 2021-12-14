@@ -22,7 +22,7 @@ class App extends React.Component {
     "Lambda": "#232EE4",
     "Omicron": "#BFBF21",
     "others": "#B42DF8",
-    "non_variants": "#EA2323"
+    // "non_variants": "#EA2323"
   }
 
   rename_columns = {

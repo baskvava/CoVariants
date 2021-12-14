@@ -277,33 +277,35 @@ class App extends React.Component {
 
     return (
         <>
-          <Navbar bg="primary" variant="dark">
-            <Container>
-              <Navbar.Brand href="#USA"># 1.10 Overview of Variants in United States</Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="#USA">All</Nav.Link>
-                <NavDropdown title="View by Counties" id="regions">
-                  <NavDropdown.Item href="#New England">New England</NavDropdown.Item>
-                  <NavDropdown.Item href="#Mid-Atlantic">Mid-Atlantic</NavDropdown.Item>
-                  <NavDropdown.Item href="#East North Central">East North Central</NavDropdown.Item>
-                  <NavDropdown.Item href="#West North Central">West North Central</NavDropdown.Item>
-                  <NavDropdown.Item href="#South Atlantic">South Atlantic</NavDropdown.Item>
-                  <NavDropdown.Item href="#East South Central">East South Central</NavDropdown.Item>
-                  <NavDropdown.Item href="#West South Central">West South Central</NavDropdown.Item>
-                  <NavDropdown.Item href="#West Mountain">West Mountain</NavDropdown.Item>
-                  <NavDropdown.Item href="#West Pacific">West Pacific</NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link href="https://usa-variant-zz85.surge.sh/" target="_blank">Vew Details</Nav.Link>
-                <Nav.Link href="https://github.com/hodcroftlab/covariants" target="_blank">Data Sources</Nav.Link>
-              </Nav>
-            </Container>
-          </Navbar>
-
+          <div style={{position: 'fixed', width: '100%', zIndex: '1000'}}>
+            <Navbar bg="primary" variant="dark" >
+              <Container>
+                <Navbar.Brand href="#USA"># 1.10 Overview of Variants in United States</Navbar.Brand>
+                <Nav className="me-auto">
+                  <Nav.Link href="#USA">All</Nav.Link>
+                  <NavDropdown title="View by Counties" id="regions">
+                    <NavDropdown.Item href="#New England">New England</NavDropdown.Item>
+                    <NavDropdown.Item href="#Mid-Atlantic">Mid-Atlantic</NavDropdown.Item>
+                    <NavDropdown.Item href="#East North Central">East North Central</NavDropdown.Item>
+                    <NavDropdown.Item href="#West North Central">West North Central</NavDropdown.Item>
+                    <NavDropdown.Item href="#South Atlantic">South Atlantic</NavDropdown.Item>
+                    <NavDropdown.Item href="#East South Central">East South Central</NavDropdown.Item>
+                    <NavDropdown.Item href="#West South Central">West South Central</NavDropdown.Item>
+                    <NavDropdown.Item href="#West Mountain">West Mountain</NavDropdown.Item>
+                    <NavDropdown.Item href="#West Pacific">West Pacific</NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link href="https://usa-variant-zz85.surge.sh/" target="_blank">Vew Details</Nav.Link>
+                  <Nav.Link href="https://github.com/hodcroftlab/covariants" target="_blank">Data Sources</Nav.Link>
+                </Nav>
+              </Container>
+            </Navbar>
+          </div>
+          <div style={{paddingTop: '50px'}}></div>
           <Container style={{"background": "whitesmoke"}} fluid>
-            <h2 style={{"textAlign": "center", "paddingTop": "30px"}}>- Whole USA- </h2>
-            {this.calling_all()}
+              <h2 style={{"textAlign": "center", "paddingTop": "30px"}}>- Whole USA- </h2>
+              {this.calling_all()}
           </Container>
-
+          
           <div id="regions">
             {
               Object.keys(this.counties_regions_set).map((region, idx) => (

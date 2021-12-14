@@ -293,7 +293,8 @@ class App extends React.Component {
                   <NavDropdown.Item href="#West Mountain">West Mountain</NavDropdown.Item>
                   <NavDropdown.Item href="#West Pacific">West Pacific</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="https://github.com/hodcroftlab/covariants">Data Sources</Nav.Link>
+                <Nav.Link href="https://usa-variant-zz85.surge.sh/" target="_blank">Vew Details</Nav.Link>
+                <Nav.Link href="https://github.com/hodcroftlab/covariants" target="_blank">Data Sources</Nav.Link>
               </Nav>
             </Container>
           </Navbar>
@@ -319,8 +320,10 @@ class App extends React.Component {
                 <br/>
                 <strong>Team</strong>: Hope-Simpson, #1.10 - How might we display variants?
                 <br/>
-                <strong>Author</strong>: <a href={"https://github.com/baskvava"}>Ying-Hsuan
-                Chen</a> (yc144@rice.edu), <a href={"https://github.com/QuenLo"}>Cyuan-Heng Luo</a> (quenluo@rice.edu)
+                <strong>Author</strong>:
+                <a href={"https://github.com/baskvava"}>Ying-Hsuan Chen</a> (yc144@rice.edu),
+                <a href={"https://github.com/QuenLo"}>Cyuan-Heng Luo</a> (quenluo@rice.edu),
+                <a href="">Zijian Zhou</a>  (zz88@rice.edu)
                 <br/>
                 <strong>Thanks To</strong>: Emma B. Hodcroft. 2021. "CoVariants: SARS-CoV-2 Mutations and Variants of
                 Interest." <a href={"https://covariants.org/"}>https://covariants.org/</a>

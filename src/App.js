@@ -24,52 +24,6 @@ function All_USA(){
         <div className="out-side">
           <div className="frame">
             <div id={"USA"}>
-              {/*<div className="display">
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#8884d8'}}></div>
-                <span className="annotation">Alpha</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#82ca9d'}}></div>
-                <span className="annotation">Beta</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#FF8D33'}}></div>
-                <span className="annotation">Gamma</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#BFBF21'}}></div>
-                <span className="annotation">Omicron</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#187C33'}}></div>
-                <span className="annotation">Kappa</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#F950CF'}}></div>
-                <span className="annotation">Eta</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#155972'}}></div>
-                <span className="annotation">Iota</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#232EE4'}}></div>
-                <span className="annotation">Lambda</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#B42DF8'}}></div>
-                <span className="annotation">others</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#15CFBE'}}></div>
-                <span className="annotation">Delta</span>
-              </div>
-              <div className="display-out-side">
-                <div className="square" style={{backgroundColor: '#EA2323'}}></div>
-                <span className="annotation">non_variants</span>
-              </div>
-            </div>*/}
               <AreaChart width={1200} height={450} data={data}
                          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <Legend verticalAlign="top" height={36} iconType={"square"} width={"100%"}/>

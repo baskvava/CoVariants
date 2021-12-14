@@ -1,7 +1,8 @@
 # CoVariants Project
 - Display kinds of variants Covid-19 data
+- Online version: https://amazing-covariants.surge.sh/
 
-![](public/demo_pic.png)
+![https://amazing-covariants.surge.sh/](public/demo_pic.png)
 
 ### Author
 [baskvava](https://github.com/baskvava), [QuenLo](https://github.com/QuenLo)

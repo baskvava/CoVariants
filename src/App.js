@@ -1,5 +1,5 @@
 import './App.css';
-import {AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Legend} from 'recharts';
+import {AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Legend, ResponsiveContainer} from 'recharts';
 import Button from 'react-bootstrap/Button';
 import {Card, Container, Nav, Navbar} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -23,72 +23,74 @@ function All_USA(){
       <>
         <div className="out-side">
           <div className="frame">
-            <div id={"USA"}>
-              <AreaChart width={1200} height={450} data={data}
-                         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                <Legend verticalAlign="top" height={36} iconType={"square"} width={"100%"}/>
-                <defs>
-                  <linearGradient id="Alpha" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Beta" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Gamma" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FF8D33" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#FF8D33" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Omicron" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#BFBF21" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#BFBF21" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Kappa" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#187C33" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#187C33" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Eta" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#F950CF" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#F950CF" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Iota" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#155972" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#155972" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Lambda" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#232EE4" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#232EE4" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="others" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#B42DF8" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#B42DF8" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="Delta" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#15CFBE" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#15CFBE" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="non_variants" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#EA2323" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#EA2323" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <XAxis dataKey="week" />
-                <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
-                <Tooltip />
-                <Area type="monotone" dataKey="Alpha" stroke="#8884d8" fillOpacity={1} fill="url(#Alpha)" />
-                <Area type="monotone" dataKey="Beta" stroke="#82ca9d" fillOpacity={1} fill="url(#Beta)" />
-                <Area type="monotone" dataKey="Gamma" stroke="#FF8D33" fillOpacity={1} fill="url(#Gamma)" />
-                <Area type="monotone" dataKey="Omicron" stroke="#BFBF21" fillOpacity={1} fill="url(#Omicron)" />
-                <Area type="monotone" dataKey="Kappa" stroke="#187C33" fillOpacity={1} fill="url(#Kappa)" />
-                <Area type="monotone" dataKey="Eta" stroke="#F950CF" fillOpacity={1} fill="url(#Eta)" />
-                <Area type="monotone" dataKey="Iota" stroke="#155972" fillOpacity={1} fill="url(#Iota)" />
-                <Area type="monotone" dataKey="Lambda" stroke="#232EE4" fillOpacity={1} fill="url(#Lambda)" />
-                <Area type="monotone" dataKey="others" stroke="#B42DF8" fillOpacity={1} fill="url(#others)" />
-                <Area type="monotone" dataKey="Delta" stroke="#15CFBE" fillOpacity={1} fill="url(#Delta)" />
-                <Area type="monotone" dataKey="non_variants" stroke="#EA2323" fillOpacity={1} fill="url(#non_variants)" />
-              </AreaChart>
+            <div id={"USA"} style={{width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <ResponsiveContainer width='80%' height={500}>
+                <AreaChart width={1200} height={450} data={data}
+                          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                    <Legend verticalAlign="top" height={72} iconType={"square"} width={"100%"} />
+                  <defs>
+                    <linearGradient id="Alpha" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Beta" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Gamma" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#FF8D33" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#FF8D33" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Omicron" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#BFBF21" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#BFBF21" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Kappa" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#187C33" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#187C33" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Eta" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#F950CF" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#F950CF" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Iota" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#155972" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#155972" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Lambda" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#232EE4" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#232EE4" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="others" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#B42DF8" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#B42DF8" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="Delta" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#15CFBE" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#15CFBE" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="non_variants" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#EA2323" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#EA2323" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <XAxis dataKey="week" />
+                  <YAxis />
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <Tooltip />
+                  <Area type="monotone" dataKey="Alpha" stroke="#8884d8" fillOpacity={1} fill="url(#Alpha)" />
+                  <Area type="monotone" dataKey="Beta" stroke="#82ca9d" fillOpacity={1} fill="url(#Beta)" />
+                  <Area type="monotone" dataKey="Gamma" stroke="#FF8D33" fillOpacity={1} fill="url(#Gamma)" />
+                  <Area type="monotone" dataKey="Omicron" stroke="#BFBF21" fillOpacity={1} fill="url(#Omicron)" />
+                  <Area type="monotone" dataKey="Kappa" stroke="#187C33" fillOpacity={1} fill="url(#Kappa)" />
+                  <Area type="monotone" dataKey="Eta" stroke="#F950CF" fillOpacity={1} fill="url(#Eta)" />
+                  <Area type="monotone" dataKey="Iota" stroke="#155972" fillOpacity={1} fill="url(#Iota)" />
+                  <Area type="monotone" dataKey="Lambda" stroke="#232EE4" fillOpacity={1} fill="url(#Lambda)" />
+                  <Area type="monotone" dataKey="others" stroke="#B42DF8" fillOpacity={1} fill="url(#others)" />
+                  <Area type="monotone" dataKey="Delta" stroke="#15CFBE" fillOpacity={1} fill="url(#Delta)" />
+                  <Area type="monotone" dataKey="non_variants" stroke="#EA2323" fillOpacity={1} fill="url(#non_variants)" />
+                </AreaChart>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>

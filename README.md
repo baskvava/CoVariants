@@ -1,6 +1,8 @@
 # CoVariants Project
 - Display kinds of variants Covid-19 data
 
+![](public/demo_pic.png)
+
 ### Author
 [baskvava](https://github.com/baskvava), [QuenLo](https://github.com/QuenLo)
 

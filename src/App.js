@@ -68,7 +68,54 @@ function App() {
       </div>
       <div className="out-side">
         <div className="frame">
-          <AreaChart width={1230} height={450} data={data}
+          <div>
+            <div className="display">
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#8884d8'}}></div>
+                <span className="annotation">Alpha</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#82ca9d'}}></div>
+                <span className="annotation">Beta</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#FF8D33'}}></div>
+                <span className="annotation">Gamma</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#BFBF21'}}></div>
+                <span className="annotation">Omicron</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#187C33'}}></div>
+                <span className="annotation">Kappa</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#F950CF'}}></div>
+                <span className="annotation">Eta</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#155972'}}></div>
+                <span className="annotation">Iota</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#232EE4'}}></div>
+                <span className="annotation">Lambda</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#B42DF8'}}></div>
+                <span className="annotation">others</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#15CFBE'}}></div>
+                <span className="annotation">Delta</span>
+              </div>
+              <div className="display-out-side">
+                <div className="square" style={{backgroundColor: '#EA2323'}}></div>
+                <span className="annotation">non_variants</span>
+              </div>
+            </div>
+            <AreaChart width={1230} height={450} data={data}
             margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="Alpha" x1="0" y1="0" x2="0" y2="1">
@@ -132,6 +179,7 @@ function App() {
             <Area type="monotone" dataKey="Delta" stroke="#15CFBE" fillOpacity={1} fill="url(#Delta)" />
             <Area type="monotone" dataKey="non_variants" stroke="#EA2323" fillOpacity={1} fill="url(#non_variants)" />
           </AreaChart>
+          </div>
         </div>
       </div>
     </>

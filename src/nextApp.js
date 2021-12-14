@@ -219,7 +219,10 @@ class App extends React.Component {
     }else{
      return(
          <Tab.Pane eventKey={county}>
-           <Spinner style={{"textAlign": "center"}} animation="border" />
+          <div style={{width: '100%'}}>
+            <Spinner style={{display: 'flex', margin: 'auto'}} animation="border" />
+          </div>
+           {/* <Spinner style={{"textAlign": "center"}} animation="border" /> */}
          </Tab.Pane>
      )
     }
@@ -268,7 +271,9 @@ class App extends React.Component {
       return( this.One_Plot(this.props.ALL_USA_JSON, "ALL_USA") )
     }else{
       return(
-          <Spinner style={{"textAlign": "center"}} animation="border" />
+        <div style={{width: '100%'}}>
+          <Spinner style={{display: 'flex', margin: 'auto'}} animation="border" />
+        </div>
       )
     }
   }
@@ -325,7 +330,7 @@ class App extends React.Component {
                 <strong>Author</strong>:
                 <a href={"https://github.com/baskvava"}>Ying-Hsuan Chen</a> (yc144@rice.edu),
                 <a href={"https://github.com/QuenLo"}>Cyuan-Heng Luo</a> (quenluo@rice.edu),
-                <a href="">Zijian Zhou</a>  (zz88@rice.edu)
+                <a href="">Zijian Zhou</a>  (zjzhou@rice.edu)
                 <br/>
                 <strong>Thanks To</strong>: Emma B. Hodcroft. 2021. "CoVariants: SARS-CoV-2 Mutations and Variants of
                 Interest." <a href={"https://covariants.org/"}>https://covariants.org/</a>

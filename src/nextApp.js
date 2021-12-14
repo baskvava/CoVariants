@@ -1,7 +1,7 @@
 import './App.css';
 import {AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Legend, ResponsiveContainer, Label} from 'recharts';
 import Button from 'react-bootstrap/Button';
-import {Badge, Card, Col, Container, Nav, Navbar, NavDropdown, Row, Tab, Tabs} from "react-bootstrap";
+import {Badge, Card, Col, Container, Nav, Navbar, NavDropdown, Row, Spinner, Tab, Tabs} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { DataFrame } from 'pandas-js';
 import React from "react";
@@ -643,7 +643,7 @@ class App extends React.Component {
   }
 
 
-  getData() {
+  getData_K() {
     return this.getVarintsFromApiAsync()
         .then((ALL_JSON) => {
           // console.log(ALL_JSON)
@@ -780,7 +780,7 @@ class App extends React.Component {
     }else{
      return(
          <Tab.Pane eventKey={county}>
-           Waiting ...
+           <Spinner style={{"textAlign": "center"}} animation="border" />
          </Tab.Pane>
      )
     }
@@ -824,6 +824,16 @@ class App extends React.Component {
 
   }
 
+  calling_all(){
+    if(this.props.ALL_USA_JSON.length > 0){
+      return( this.One_Plot(this.props.ALL_USA_JSON, "ALL_USA") )
+    }else{
+      return(
+          <Spinner style={{"textAlign": "center"}} animation="border" />
+      )
+    }
+  }
+
   render() {
     // const County_JSON = this.props.ALL_DF.filter(this.props.ALL_DF.get("county").eq("Florida")).to_json({orient: 'records'});
     // console.log(County_JSON)
@@ -857,7 +867,7 @@ class App extends React.Component {
 
           <Container style={{"background": "whitesmoke"}} fluid>
             <h2 style={{"textAlign": "center", "paddingTop": "30px"}}>- Whole USA- </h2>
-            {this.One_Plot(this.data, "ALL_USA")}
+            {this.calling_all()}
           </Container>
 
           <div id="regions">
@@ -895,7 +905,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     // users_all: state.users,
-    ALL_DF: state.ALL_DF
+    ALL_DF: state.ALL_DF,
+    ALL_USA_JSON: state.ALL_USA_JSON
   }
 };
 

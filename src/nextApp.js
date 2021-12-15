@@ -22,7 +22,7 @@ class App extends React.Component {
     "Lambda": "#232EE4",
     "Omicron": "#BFBF21",
     "others": "#B42DF8",
-    "non_variants": "#EA2323"
+    // "non_variants": "#EA2323"
   }
 
   rename_columns = {
@@ -307,7 +307,7 @@ class App extends React.Component {
           </div>
           <div style={{paddingTop: '50px'}}></div>
           <Container style={{"background": "whitesmoke"}} fluid>
-              <h2 style={{"textAlign": "center", "paddingTop": "30px"}}>- Whole USA- </h2>
+              <h2 style={{"textAlign": "center", "paddingTop": "30px"}} id="USA">- Whole USA- </h2>
               {this.calling_all()}
           </Container>
           

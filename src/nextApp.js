@@ -1,12 +1,11 @@
 import './App.css';
-import {AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Legend, ResponsiveContainer, Label} from 'recharts';
+import {AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Legend, ResponsiveContainer } from 'recharts';
 import Button from 'react-bootstrap/Button';
-import {Badge, Card, Col, Container, Nav, Navbar, NavDropdown, Row, Spinner, Tab, Tabs} from "react-bootstrap";
+import { Card, Col, Container, Nav, Navbar, NavDropdown, Row, Spinner, Tab } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { DataFrame } from 'pandas-js';
 import React from "react";
 import { connect } from 'react-redux';
-import {getdata} from "./redux/Actions";
+import { getdata } from "./redux/Actions";
 let URL = "https://raw.githubusercontent.com/hodcroftlab/covariants/master/cluster_tables/USAClusters_data.json";
 
 class App extends React.Component {
@@ -67,74 +66,6 @@ class App extends React.Component {
         }
         );
   }
-
-
-  getVarintsFromApiAsync() {
-
-    return fetch(URL)
-        .then((response) => response.json())
-        .then((responseJson) => {
-          return responseJson.countries;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-  }
-
-
-  getData_K() {
-    return this.getVarintsFromApiAsync()
-        .then((ALL_JSON) => {
-          // console.log(ALL_JSON)
-
-          let ALL_DF = new DataFrame()
-          for (const county in ALL_JSON) {
-            // console.log( ALL_JSON[county] )
-            const length = ALL_JSON[county].week.length
-            const covkeys = Object.keys(ALL_JSON[county])
-            const build_obj = []
-            for (var i in [...Array(length).keys()]) {
-              const obj = {};
-              let others = 0
-              let delta = 0
-              let total = 0
-              let total_sequences = 0
-              for (var K of covkeys) {
-                if (['20A/S:98F', '21H (Mu)', '20B/S:732A', '20A/S:126A', '20E (EU1)',
-                  '21C (Epsilon)', '20A/S:439K', 'S:677H.Robin1', 'S:677P.Pelican',
-                  '20A.EU2', '20G/S:677H.Robin2', '20G/S:677H.Yellowhammer',
-                  '20G/S:677R.Roadrunner', '20G/S:677H.Heron', '20G/S:677H.Bluebird',
-                  '20G/S:677H.Quail', '20G/S:677H.Mockingbird'].indexOf(K) >= 0) {
-                  others = others + ALL_JSON[county][K].at(i)
-                } else if (['21A (Delta)', '21I (Delta)', '21J (Delta)'].indexOf(K) >= 0) {
-                  delta = delta + ALL_JSON[county][K].at(i)
-                } else if (K === "total_sequences") {
-                  total_sequences = ALL_JSON[county][K].at(i)
-                  continue
-                } else if (K === "week") {
-                  obj["week"] = ALL_JSON[county][K].at(i)
-                  continue
-                } else {
-                  obj[this.rename_columns[K]] = ALL_JSON[county][K].at(i)
-                }
-                total = total + ALL_JSON[county][K].at(i)
-              }
-              obj["Delta"] = delta
-              obj["others"] = others
-              obj["non_variants"] = total_sequences - total
-              obj["county"] = county
-              build_obj.push(obj)
-            }
-            // console.log(build_obj)
-            const city_DF = new DataFrame(build_obj)
-            // console.log( city_DF.toString() )
-            ALL_DF = ALL_DF.append(city_DF, true)
-          }
-          // console.log( ALL_DF.toString() )
-          return ALL_DF
-        })
-  }
-
 
   One_Area(name) {
     let fill = "url(#" + name + ")"
